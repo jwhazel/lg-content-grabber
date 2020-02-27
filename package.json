@@ -5,10 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "mock": "node mock-server/index.js",
+    "build-component": "vue-cli-service build --target lib --inline-vue",
+    "build-bookmarklet": "webpack build wrapper/bookmarklet.js",
+    "final": "npm run build-component &&  npm run build-bookmarklet && ./bookmarkletify"
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
