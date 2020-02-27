@@ -1,24 +1,29 @@
 # lg-content-grabber
+This is a private repo for an internal tool that allows extraction of legacy Gannett article content. The widget runs as a bookmarklet that can be invoked on any legacy Gannett website including USAT.
 
-## Project setup
+You don't have to do anything to make this work. Simply copy `bookmarklet.js` out of the /dist folder and paste the code into a bookmark.
+
+## Project setup and development
+There are multiple components to this project. The core bookmark component is written in VueJS. That component is then extracted and injected into a new component that.
+
+### REQUIRED - Initial Setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### DEV - Mock server
+This sets up the mock server that provides a dummy JSON response to test the article data on. Only required if you are developing on the core Vue component.
+```
+npm run mock
+```
+
+### DEV - Compiles and hot-reloads Vue component
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### BUILD - Compiles the core Vue component, compiles the widget code, modifies
 
-### Lints and fixes files
 ```
-npm run lint
+npm run final
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
