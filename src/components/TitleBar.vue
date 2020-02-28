@@ -1,7 +1,7 @@
 <template>
   <div class="lg-title-container">
     <h3>{{appTitle}}</h3>
-    <button class="lg-close">×</button>
+    <button class="lg-close" @click="$emit('closeApp')">×</button>
   </div>
 </template>
 

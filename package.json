@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "npm run mock & vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name bookmarklet",
     "lint": "vue-cli-service lint",
     "mock": "node mock-server/index.js",
     "build-component": "vue-cli-service build --target lib --inline-vue",

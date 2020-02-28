@@ -1,5 +1,7 @@
 import Vue from "vue";
-import App from "../dist/lg-content-grabber.umd.js";
+import App from "../dist/bookmarklet.umd.js";
+
+
 
 (() => {
   //Append an entry point to the current page

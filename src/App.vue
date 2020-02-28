@@ -1,7 +1,7 @@
 <template>
   <div class="lg-app-container">
     <div class="lg-app">
-      <TitleBar :appTitle="appTitle" />
+      <TitleBar :appTitle="appTitle" @closeApp="closeApp"/>
       <Status v-if="!loadSuccessful" :status="status" :debug="debug" />
       <div v-if="loadSuccessful" class="lg-content-container">
         <MetaContainer :articleData="articleData" class="lg-content-column" />
@@ -46,6 +46,12 @@ export default {
         this.status = res.errorType;
         this.debug = res.errorMsg;
       });
+  },
+  methods: {
+    closeApp: function() {
+      this.$destroy();
+      this.$el.parentNode.removeChild(this.$el);
+    }
   }
 };
 </script>
@@ -65,15 +71,31 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 80%;
+  height: 80vh;
   width: 100%;
   background-color: #fff;
   padding: 0.1em 2em 2em 2em;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.lg-content-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 .lg-content-column {
   flex: 1;
   padding: 1em;
   border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  flex-basis:50%;
+}
+
+.lg-content-column:last-child {
+  border-right: none;
 }
 </style>
