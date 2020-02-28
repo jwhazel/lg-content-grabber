@@ -26,5 +26,6 @@ export default {
   padding: 1.5em;
   text-align: left;
   color: #333;
+  white-space: pre-wrap; 
 }
 </style>
