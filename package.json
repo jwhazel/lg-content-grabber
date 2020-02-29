@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "npm run mock & vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name bookmarklet",
-    "lint": "vue-cli-service lint",
     "mock": "node mock-server/index.js",
-    "build-component": "vue-cli-service build --target lib --inline-vue",
-    "build-bookmarklet": "webpack build wrapper/bookmarklet.js",
-    "final": "npm run build-component &&  npm run build-bookmarklet && ./bookmarkletify"
+    "build-component": "vue-cli-service build --target lib --name bookmarklet --inline-vue",
+    "build-bookmarklet": "webpack wrapper/bookmarklet.js -o dist/bookmarklet.js --mode='production'",
+    "lint": "vue-cli-service lint",
+    "build": "npm run build-component &&  npm run build-bookmarklet && node bookmarkletify.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -24,7 +23,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^3.3.11"
   },
   "eslintConfig": {
     "root": true,
