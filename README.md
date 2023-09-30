@@ -1,3 +1,5 @@
+> Archive notes: a useful little tool used by several former colleagues during the Gannett/Gatehouse merger. Their platform has since evolved and none of this works anymore. Leaving up for posterity since it is a semi-decent workflow for turning a Vue app into a bookmarklet.
+
 # lg-content-grabber
 
 This is a private repo for an internal tool that allows extraction of legacy Gannett article content. The widget runs as a bookmarklet that can be invoked on any legacy Gannett website including USAT.
